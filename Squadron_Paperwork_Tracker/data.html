@@ -10,6 +10,7 @@
 <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
 <link href="default.css" rel="stylesheet" type="text/css" media="all" />
 <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+<script defer src="validate.js"></script>
 </head>
 <!--Head Information stop-->    
 <!--Body start-->    
@@ -63,10 +64,9 @@
 		</br>
 		</br>
 		<p>
-		<form action="search.php" method="post">
+		<form id="form10" onsubmit="return checkFormData();" action="search.php" method="post">
 			<div class = "form_group">    
-                  Search <input type="text" name="search"><br>
-
+                  Search <input type="text" id ="search" name="search" required><br>
 					Column: <select name="column">
 							<option value="cadetName">Cadet Lastname</option>
 							<option value="squad">Squadron</option>

@@ -10,6 +10,7 @@
 <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
 <link href="default.css" rel="stylesheet" type="text/css" media="all" />
 <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+<script defer src="validate.js"></script>
 </head>
 <!--Head Information stop-->    
 
@@ -63,30 +64,37 @@
 		</br>
 		</br>
 		</br>
-		<p>
-		<h2>Sign Up</h2>    
-        <form name = "form1" action="send.php" method = "post" enctype = "multipart/form-data" >      
-                <div class = "form_group">    
-                    <label>Cadet Squadron</label>    
-						<input type = "value"name = "squad" min = "1" max = "40" maxlength="2" value = "" required/>    
-                </div>    
-				<div class = "form_group">    
-                    <label>Cadet Lastname</label>    
-						<input type = "text"name = "cadetName" value = "" required/>    
-                </div>     
-                <div class = "form_group">    
-                    <label>Class Year</label>    
-						<input type = "year" name = "classYear" value = "" required/>    
-                </div> 
-                <div class = "form_group">    
-                   		Form 10 <select name="form10">
-									<option value="FALSE">Bad</option>
-									<option value="TRUE">Good</option>
-								</select><br> 
-                </div> 
-				<div class = "form_group">
-					<input type="submit" value="Enter Record"/>
-            	</div>    
+		<p>  
+        <form name = "form10" id = "form10" onsubmit="return checkForm();" action="send.php" method = "post" enctype = "multipart/form-data" >      
+                <fieldset>
+        	        <legend>Record Entry</legend>
+        	        <div class = "form_group">    
+			       		<label>Cadet Squadron</label>    
+							<input type = "number" name = "squad" min = "1" max = "40" maxlength="2" value = "" required/>
+        	        </div>    
+					<div class = "form_group">    
+        	            <label>Cadet Lastname</label>    
+							<input type = "text" id = "cadetName" name = "cadetName" value = "" required/>    
+        	        </div>     
+        	        <div class = "form_group"> 
+        	        	Class Year: <select name="classYear">
+										<option value="2021">2021</option>
+										<option value="2022">2022</option>
+										<option value="2023">2023</option>
+										<option value="2024">2024</option>
+									</select><br>
+        
+                	</div> 
+                	<div class = "form_group">    
+                   			Form 10 <select name="form10">
+										<option value="FALSE">Bad</option>
+										<option value="TRUE">Good</option>
+									</select><br> 
+                	</div> 
+					<div class = "form_group">
+						<input type="submit" value="Enter Record"/>
+            		</div>
+            	</fieldset    
         </form>
 		</p>
 		</br>
