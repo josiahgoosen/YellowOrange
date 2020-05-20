@@ -77,23 +77,24 @@
 		</br>
 		<p>
 		<h2>Sign Up</h2>    
-        <form name = "form1" action="modified.php" method = "post" enctype = "multipart/form-data" >    
+        <form name = "form1" action="send.php" method = "post" enctype = "multipart/form-data" >    
             <div class = "container">    
                 <div class = "form_group">    
-                    <label>First Name:</label>    
-                    <input type = "text" name = "fname" value = "" required/>    
+                    <label>Cadet Squadron</label>    
+						<input type = "value" name = "squad" min = "1" max = "40" maxlength="2" value = "" required/>    
                 </div>    
+				<div class = "form_group">    
+                    <label>Cadet Name</label>    
+						<input type = "text" name = "cadetName" value = "" required/>    
+                </div>     
                 <div class = "form_group">    
-                    <label>Middle Name:</label>    
-                    <input type = "text" name = "mname" value = "" required />    
-                </div>    
+                    <label>Class Year</label>    
+						<input type = "year" name = "classYear" value = "" required/>    
+                </div> 
                 <div class = "form_group">    
-                    <label>Last Name:</label>    
-                    <input type = "text" name = "lname" value = "" required/>    
-                </div>    
-                <div class = "form_group">    
-                    <label>Password:</label>    
-                    <input type = "password" name = "pwd" value = "" required/>    
+                    <label for="form10">Form 10</label><br />
+						<input class= "radio-input" type="radio" id="form10" required name="form10" value="0">Bad</input>
+						<input class= "radio-input" type="radio" id="form10"  required name="form10" value="1">Good</input> 
                 </div> 
 				<div class = "form_group">
 					<input type="submit" value="Submit"/>
