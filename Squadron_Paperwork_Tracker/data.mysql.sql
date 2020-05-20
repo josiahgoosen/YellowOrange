@@ -28,9 +28,9 @@ CREATE TABLE form(
   		/
 );
 */
-INSERT INTO cadet (cadetName, classYear, squad, form10) VALUES
-('Doe', '2021', '01', '1', '5'),
-('Coughman', '2024', '40', '0', '0');
+INSERT INTO cadet (cadetName, classYear, squad, goodType, badType) VALUES
+('Doe', '2021', '01', '5', '0'),
+('Coughman', '2024', '40', '0', '5');
 
 
 

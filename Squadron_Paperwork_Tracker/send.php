@@ -14,9 +14,10 @@
 	$squad = mysqli_real_escape_string($link, $_REQUEST['squad']);
 	$cadetName = mysqli_real_escape_string($link, $_REQUEST['cadetName']);
 	$classYear = mysqli_real_escape_string($link, $_REQUEST['classYear']);
-	$form10 = mysqli_real_escape_string($link, $_REQUEST['form10']);
+	$badType = mysqli_real_escape_string($link, $_REQUEST['badType']);
+	$goodType = mysqli_real_escape_string($link, $_REQUEST['goodType']);
 
-	$sql = "INSERT INTO cadet (squad, cadetName, classYear, form10) VALUES ('$squad', 				'$cadetName', '$classYear', '$form10')";
+	$sql = "INSERT INTO cadet (squad, cadetName, classYear, goodType, badType) VALUES ('$squad', 				'$cadetName', '$classYear', '$badType', '$goodType)";
 	if(mysqli_query($link, $sql)){
 	    echo "Record added successfully.";
 	} else{
