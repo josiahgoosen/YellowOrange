@@ -2,7 +2,7 @@
        $servername = "localhost";  
        $username = "student";  
        $password = "CompSci364";
-       $database = "data";
+       $database = "student";
        $link = new mysqli ($servername, $username , $password, 
        							$database);  
 
@@ -14,13 +14,20 @@
 	$squad = mysqli_real_escape_string($link, $_REQUEST['squad']);
 	$cadetName = mysqli_real_escape_string($link, $_REQUEST['cadetName']);
 	$classYear = mysqli_real_escape_string($link, $_REQUEST['classYear']);
-	$badType = mysqli_real_escape_string($link, $_REQUEST['badType']);
-	$goodType = mysqli_real_escape_string($link, $_REQUEST['goodType']);
-
-	$sql = "INSERT INTO cadet (squad, cadetName, classYear, goodType, badType) VALUES ('$squad', 				'$cadetName', '$classYear', '$badType', '$goodType)";
+	$type = NULL;
+	if($_REQUEST['form10'] == 'TRUE'){
+		$type = 'TRUE';
+	}
+	else{
+		$type = 'FALSE';
+	}
+	//TODO: SQL INJECTION PROTECTION
+	
+	$sql = "INSERT INTO cadet (squad, cadetName, classYear, type) VALUES ('$squad', '$cadetName', '$classYear', $type)";
+	
 	if(mysqli_query($link, $sql)){
 	    echo "Record added successfully.";
 	} else{
-	    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+	    echo "ERROR: Could not execute $sql. " . mysqli_error($link);
 	}
 ?>  

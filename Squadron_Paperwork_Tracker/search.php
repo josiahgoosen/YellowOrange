@@ -10,7 +10,7 @@
        $servername = "localhost";  
        $username = "student";  
        $password = "CompSci364";
-       $database = "data";
+       $database = "student";
        
        $link = new mysqli ($servername, $username , $password, 
        							$database);  
@@ -19,17 +19,20 @@
     	die("ERROR: Could not connect. " . mysqli_connect_error());
 	}
 	
-	$sql = "SELECT * FROM cadet WHERE $column like '%search%'"; 
-	
+	$sql = "SELECT cadetName, classYear, squad, SUM(type) as pos, COUNT(type) as total
+			FROM cadet 
+			WHERE $column like '%$search%'
+			GROUP BY classYear, cadetName, squad"; 
+			
+	//TODO: SQL INJECTION PROTECTION
 	$result = $link->query($sql);
 
 	if ($result->num_rows > 0){
 		while($row = $result->fetch_assoc() ){
-			echo $row["cadetName"]."  ".$row["squad"]."  ".$row["classYear"]."  ".$row["form10"]."<br>";
+			echo $row["cadetName"]."  ".$row["squad"]."  ".$row["classYear"]."   ".$row["total"]."   ".$row["pos"]."<br>";
 		}
 	} 
 	else {
 		echo "0 records";
 	}
-
 ?>

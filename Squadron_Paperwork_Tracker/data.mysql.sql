@@ -1,19 +1,25 @@
-/*DROP DATABASE IF EXISTS data;*/
+/*DROP DATABASE IF EXISTS data;
 
 CREATE DATABASE data;
 USE data;
-
+*/
 
 CREATE TABLE cadet (
 	cadetName CHARACTER VARYING(30) NOT NULL,
 	classYear INTEGER(4) NOT NULL,
 	squad INTEGER(2) NOT NULL,
-	goodType INTEGER(3),
-	badType INTEGER(3),
-  
-	PRIMARY KEY (cadetName)
-
+	type BOOLEAN
 );
+
+INSERT INTO cadet (cadetName, classYear, squad, type) VALUES
+('Doe', '2021', '01', TRUE),
+('Doe', '2021', '01', TRUE),
+('Doe', '2021', '01', TRUE),
+('Doe', '2021', '01', TRUE),
+('Doe', '2021', '01', TRUE),
+('Coughman', '2024', '40', FALSE);
+
+
 /*
 CREATE TABLE form(
   cadetName CHARACTER VARYING(30) NOT NULL,
@@ -28,10 +34,5 @@ CREATE TABLE form(
   		/
 );
 */
-INSERT INTO cadet (cadetName, classYear, squad, goodType, badType) VALUES
-('Doe', '2021', '01', '5', '0'),
-('Coughman', '2024', '40', '0', '5');
-
-
 
 
