@@ -8,7 +8,8 @@ CREATE TABLE cadet (
 	cadetName CHARACTER VARYING(30) NOT NULL,
 	classYear INTEGER(4) NOT NULL,
 	squad INTEGER(2) NOT NULL,
-	form10 BOOLEAN,
+	goodType INTEGER(3),
+	badType INTEGER(3),
   
 	PRIMARY KEY (cadetName)
 
@@ -28,8 +29,8 @@ CREATE TABLE form(
 );
 */
 INSERT INTO cadet (cadetName, classYear, squad, form10) VALUES
-('Doe', '2021', '01', '1'),
-('Coughman', '2024', '40', '0');
+('Doe', '2021', '01', '1', '5'),
+('Coughman', '2024', '40', '0', '0');
 
 
 
