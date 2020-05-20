@@ -20,3 +20,18 @@ CREATE TABLE cadet (
 	PRIMARY KEY (cadetName),
   FOREIGN KEY (form10) REFERENCES form10 (cadetName)
 );
+
+INSERT INTO cadet (cadetName, classYear, squad, form10) VALUES
+('Doe', '2021', '01', '1'),
+('Doe', '2021', '01', '1'),
+('Doe', '2021', '01', '1'),
+('Doe', '2021', '01', '1'),
+('Doe', '2021', '01', '1'),
+('Coughman', '2024', '40', '0'),
+('Coughman', '2024', '40', '0'),
+('Coughman', '2024', '40', '0'),
+('Coughman', '2024', '40', '0'),
+('Coughman', '2024', '40', '0');
+
+
+

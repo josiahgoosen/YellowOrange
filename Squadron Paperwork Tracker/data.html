@@ -12,7 +12,29 @@
 <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 <!--Head Information stop-->    
-
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.search-box input[type="text"]').on("keyup input", function(){
+        /* Get input value on change */
+        var inputVal = $(this).val();
+        var resultDropdown = $(this).siblings(".result");
+        if(inputVal.length){
+            $.get("search.php", {term: inputVal}).done(function(data){
+                // Display the returned data in browser
+                resultDropdown.html(data);
+            });
+        } else{
+            resultDropdown.empty();
+        }
+    });
+    
+    // Set search input value on click of result item
+    $(document).on("click", ".result p", function(){
+        $(this).parents(".search-box").find('input[type="text"]').val($(this).text());
+        $(this).parent(".result").empty();
+    });
+});
+</script>
 <!--Body start-->    
 <body>
 <div id="page" class="container">
@@ -76,8 +98,20 @@
 		</br>
 		</br>
 		<p>
-		    <!--This is where the database interface code will go-->
-	        <strong>THE DATABASe WILL RETURN DATA HERE</strong>
+		<!--<form action="search.php" method="post">-->
+			<div class="search-box">
+				<input type="text" autocomplete="off" placeholder="Search for Cadet..." />
+			<div class="result"></div>
+			</div>
+		<!--</form>-->
+		<ul>
+		<?php
+		
+		?>
+		<!--<li><?php echo "$squad, <em>$cadetName</em>, ".
+                    "$classYear, $f10"; ?></li>
+					-->
+		</ul>
 		</p>
 		</br>
 		</br>
