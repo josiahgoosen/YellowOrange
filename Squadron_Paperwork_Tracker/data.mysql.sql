@@ -12,11 +12,11 @@ CREATE TABLE cadet (
 );
 
 INSERT INTO cadet (cadetName, classYear, squad, type) VALUES
-('Doe', '2021', '01', TRUE),
-('Doe', '2021', '01', TRUE),
-('Doe', '2021', '01', TRUE),
-('Doe', '2021', '01', TRUE),
-('Doe', '2021', '01', TRUE),
+('Doe', '2021', '05', TRUE),
+('Doe', '2021', '05', TRUE),
+('Doe', '2021', '05', TRUE),
+('Doe', '2021', '05', TRUE),
+('Doe', '2021', '05', TRUE),
 ('Coughman', '2024', '40', FALSE);
 
 
