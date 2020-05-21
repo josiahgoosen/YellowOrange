@@ -51,7 +51,7 @@
 		    <!--Page title start-->
 			<div class="title">
 				<h2>Search the database</h2>
-				<span class="byline">By Squadron, Lastname, or Class Year</span></span>
+				<span class="byline">By Lastname, Squadron, or Class Year</span></span>
 			</div>
 			<!--Page title stop-->
 		</div>
@@ -66,8 +66,8 @@
 		<p>
 		<form id="form10" onsubmit="return checkFormData();" action="search.php" method="post">
 			<div class = "form_group">    
-                  Search <input type="text" id ="search" name="search" required><br>
-					Column: <select name="column">
+                  Search <input type="text" id ="search" name="search" placeholder="the Database" required><br>
+					By: <select name="column">
 							<option value="cadetName">Cadet Lastname</option>
 							<option value="squad">Squadron</option>
 							<option value="classYear">Class Year</option>
